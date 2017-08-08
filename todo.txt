@@ -1,0 +1,2 @@
+Create a way to add new product
+Create a save button to save the products there into a mongodb database

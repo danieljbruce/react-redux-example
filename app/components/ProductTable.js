@@ -25,7 +25,7 @@ const ProductTable = ({ filter }) => {
         }
     });
 
-    return <div> {rows} </div>;
+    return (<div> {rows} </div>);
 };
 
 ProductTable.propTypes = {

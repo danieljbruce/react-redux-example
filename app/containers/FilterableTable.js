@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { filterTable } from '../actions';
 import ProductTable from '../components/ProductTable';
 import { filterableTable } from '../styles/filterableTable.scss';
+import AddProductButton from '../components/AddProductButton';
 
 const FilterableTable = ({ filter, onFilter }) => {
     let input;
@@ -12,7 +13,7 @@ const FilterableTable = ({ filter, onFilter }) => {
         <div className={filterableTable}>
             <input
                 ref={node => {input = node;}} />
-            <button> Add Item </button>
+            <AddProductButton/>
             <input
                 value={filter}
                 ref={node => {input = node;}}

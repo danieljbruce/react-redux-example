@@ -4,7 +4,9 @@
 
 import React from 'react';
 
-const AddProductButton = function render() {
-    return <button> Add item </button>;
-};
+class AddProductButton extends React.Component {
+    render() {
+        return (<button> Add item </button>);
+    }
+}
 export default AddProductButton;

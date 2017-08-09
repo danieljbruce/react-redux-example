@@ -4,7 +4,7 @@
 
 import React from 'react';
 
-const AddProductButton = () =>
+const AddProductButton = function render() {
     <button> Add item </button>;
-
+};
 export default AddProductButton;

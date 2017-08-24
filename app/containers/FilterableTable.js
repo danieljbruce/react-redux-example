@@ -6,6 +6,7 @@ import ProductTable from '../components/ProductTable';
 import { filterableTable } from '../styles/filterableTable.scss';
 import AddProductButton from '../components/AddProductButton';
 import { changeNextProduct } from '../actions/ChangeNextProduct';
+import { addNextProduct } from '../actions/AddNextProduct';
 
 const FilterableTable = ({ filter, onFilter, nextProduct, onChangeNextProduct}) => {
     let input;
@@ -32,7 +33,8 @@ FilterableTable.propTypes = {
     filter: PropTypes.string,
     onFilter: PropTypes.func,
     nextProduct: PropTypes.string,
-    onChangeNextProduct: PropTypes.func
+    onChangeNextProduct: PropTypes.func,
+    onAddNextProduct: PropTypes.func
 };
 
 const mapStateToProps = (state) => {
@@ -45,7 +47,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         onFilter: filterText => dispatch(filterTable(filterText)),
-        onChangeNextProduct: nextProductText => dispatch(changeNextProduct(nextProductText))
+        onChangeNextProduct: nextProductText => dispatch(changeNextProduct(nextProductText)),
+        onAddNextProduct: () => dispatch(addNextProduct())
     };
 };
 

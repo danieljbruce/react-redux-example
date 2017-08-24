@@ -10,8 +10,8 @@ import PropTypes from 'prop-types';
 const AddProductButton = ({onAddNextProduct}) => {
     console.log(onAddNextProduct);
     return (
-        // return (<button onClick={() => onAddNextProduct()}> Add item </button>);
-        <button> Add item </button>
+        <button onClick={() => onAddNextProduct()}> Add item </button>
+        // <button> Add item </button>
     );
 };
 

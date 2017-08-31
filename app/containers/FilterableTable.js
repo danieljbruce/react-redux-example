@@ -8,10 +8,10 @@ import AddProductButton from '../components/AddProductButton';
 import { changeNextProduct } from '../actions/ChangeNextProduct';
 import { addNextProduct } from '../actions/AddNextProduct';
 
-const FilterableTable = ({ filter, onFilter, nextProduct, onChangeNextProduct}) => {
+const FilterableTable = ({ filter, onFilter, nextProduct, onChangeNextProduct, products}) => {
     let input;
     let input2;
-    console.log(nextProduct);
+    console.log(products);
     return (
         <div className={filterableTable}>
             <input
@@ -24,7 +24,7 @@ const FilterableTable = ({ filter, onFilter, nextProduct, onChangeNextProduct}) 
                 ref={node => {input2 = node;}}
                 onChange={() => onFilter(input2.value)} />
 
-            <ProductTable filter={filter} />
+            <ProductTable filter={filter} products={products}/>
         </div>
     );
 };
@@ -34,13 +34,15 @@ FilterableTable.propTypes = {
     onFilter: PropTypes.func,
     nextProduct: PropTypes.string,
     onChangeNextProduct: PropTypes.func,
-    onAddNextProduct: PropTypes.func
+    onAddNextProduct: PropTypes.func,
+    products: PropTypes.array,
 };
 
 const mapStateToProps = (state) => {
     return {
         filter: state.filter,
-        nextProduct: state.nextProduct
+        nextProduct: state.nextProduct,
+        products: state.products
     };
 };
 

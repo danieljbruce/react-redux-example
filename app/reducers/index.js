@@ -44,11 +44,12 @@ const crossSliceReducer = (state = {nextProduct: '', products: []}, action) => {
         case 'CHANGE_NEXT_PRODUCT':
             return {'nextProduct': action.nextProduct, 'products': state.products};
         case 'ADD_NEXT_PRODUCT':
-            console.log(state.products);
             const product = {category: 'Sporting Goods', price: '$9.99', stocked: true, name: state.nextProduct};
-            const newProductList = state.products;
+            const newProductList = [];
+            for (let i = 0; i < state.products.length; i++) {
+                newProductList.push(state.products[i]);
+            }
             newProductList.push(product);
-            console.log(newProductList);
             return {'nextProduct': state.nextProduct, 'products': newProductList};
         default:
             if (typeof(state.nextProduct) === 'undefined') {

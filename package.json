@@ -4,9 +4,10 @@
   "description": "A boilerplate for playing around with react, redux and react-router with the help of webpack.",
   "main": "index.js",
   "scripts": {
+    "dist": "browserify app/index.js -o dist/bundle.js",
     "test": "",
     "start": "node server",
-    "build": "rimraf dist && webpack --config ./webpack.production.config.js --progress --profile --colors",
+    "build": "rimraf dist && webpack --config ./webpack.production.config.js --progress --profile --colors && ncp extras final && ncp dist final",
     "eslint": "eslint ."
   },
   "keywords": [
@@ -17,7 +18,9 @@
   "author": "Jean-Pierre Sierens",
   "license": "MIT",
   "dependencies": {
+    "eth-lightwallet": "^2.5.6",
     "file-loader": "^0.9.0",
+    "ncp": "^2.0.0",
     "prop-types": "^15.5.9",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
@@ -25,7 +28,10 @@
     "react-redux": "^4.4.5",
     "react-router-dom": "^4.1.1",
     "react-router-redux": "next",
-    "redux": "^3.5.2"
+    "redux": "^3.5.2",
+    "redux-api-middleware": "^2.0.0-beta.3",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",

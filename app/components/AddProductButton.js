@@ -6,6 +6,7 @@ import React from 'react';
 import { addNextProduct } from '../actions/AddNextProduct';
 import PropTypes from 'prop-types';
 // import { addNextProduct } from '../actions/AddNextProduct';
+// import fetchEtherscanBalances from './actions/FetchEtherscanBalances';
 
 const AddProductButton = ({onAddNextProduct}) => {
     console.log(onAddNextProduct);

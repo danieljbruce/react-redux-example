@@ -23,7 +23,6 @@ const FilterableTable = ({ filter, onFilter, nextProduct, onChangeNextProduct, p
                 value={filter}
                 ref={node => {input2 = node;}}
                 onChange={() => onFilter(input2.value)} />
-
             <ProductTable filter={filter} products={products}/>
         </div>
     );

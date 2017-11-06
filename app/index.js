@@ -3,8 +3,21 @@ import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { configureStore, history } from './store/configureStore';
 import Root from './containers/Root';
+// import * as actions from './actions';
+import { fetchEtherscanBalances } from './actions/FetchEtherscanBalances';
+// import thunk from 'redux-thunk';
+
+// import fetchData from './actions/FetchData';
+// const f = sampleDispatch;
 
 const store = configureStore();
+window.store = store;
+window.fetchEtherscanBalances = fetchEtherscanBalances;
+// Try the following:
+// window.store.dispatch(window.fetchEtherscanBalances)
+
+// window.actions = actions;
+// Try the following line:
 
 render(
     <AppContainer>
@@ -27,3 +40,5 @@ if (module.hot) {
         );
     });
 }
+
+
